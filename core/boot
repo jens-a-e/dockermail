@@ -40,6 +40,19 @@ postmap /etc/postfix/virtual
 postmap /etc/postfix/virtual-mailbox-maps
 chown -R postfix:postfix /etc/postfix
 
+# Enable PFS for postfix on every boot
+openssl gendh -out /etc/postfix/dh_512.pem -2 512
+openssl gendh -out /etc/postfix/dh_1024.pem -2 1024
+
+postconf -e "smtpd_tls_dh1024_param_file = /etc/postfix/dh_1024.pem"
+postconf -e "smtpd_tls_dh512_param_file = /etc/postfix/dh_512.pem"
+postconf -e "smtpd_tls_eecdh_grade = strong"
+postconf -e "tls_preempt_cipherlist = yes"
+postconf -e "smtpd_tls_loglevel = 1"
+postconf -e "smtp_tls_loglevel = 1"
+
+postfix reload
+
 # Make user vmail own all mail folders
 chown -R vmail:vmail /vmail
 chmod u+w /vmail
