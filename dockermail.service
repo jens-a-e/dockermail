@@ -1,10 +1,11 @@
 [Unit]
 Description=Mail Service
 After=docker.service
-WorkingDirectory=/home/core/dockermail
 
 [Service]
 Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/home/core/dockermail
 ExecStart=/opt/bin/docker-compose up --no-recreate -d
 ExecStop=/opt/bin/docker-compose stop
 
