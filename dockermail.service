@@ -1,0 +1,9 @@
+[Unit]
+Description=Mail Service
+After=docker.service
+WorkingDirectory=/home/core/dockermail
+
+[Service]
+TimeoutStartSec=0
+ExecStart=/opt/bin/docker-compose up --no-recreate -d
+ExecStop=/opt/bin/docker-compose stop
