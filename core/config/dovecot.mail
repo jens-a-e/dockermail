@@ -16,4 +16,12 @@ namespace inbox {
     auto = subscribe # autocreate and autosubscribe the Sent mailbox
     special_use = \Sent
   }
+  mailbox Spam {
+    auto = subscribe
+    special_use = \Junk
+  }
+  mailbox Archive {
+    auto = subscribe
+    special_use = \Archive
+  }
 }
