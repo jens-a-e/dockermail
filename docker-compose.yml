@@ -9,12 +9,12 @@ core:
     - /opt/dockermail/vmail:/vmail
   links:
    - opendkim
-   - amavis
+   # - amavis
 opendkim:
   build: ./opendkim
   volumes:
     - /opt/dockermail/settings:/mail_settings
-amavis:
-  build: ./amavis
-  volumes:
-    - /opt/dockermail/settings:/mail_settings
+# amavis:
+#   build: ./amavis
+#   volumes:
+#     - /opt/dockermail/settings:/mail_settings
