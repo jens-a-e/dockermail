@@ -1,5 +1,6 @@
+# Enable extensions as shown in: http://wiki.dovecot.org/LDA/Postfix
 dovecot   unix  -       n       n       -       -       pipe
-  flags=DRhu user=vmail:vmail argv=/usr/lib/dovecot/deliver -f ${sender} -d ${user}@${nexthop} -m ${extension}
+  flags=DRhu user=vmail:vmail argv=/usr/lib/dovecot/dovecot-lda -f ${sender} -a ${recipient} -d ${user}@${nexthop}
 
 # we need to be permissive with the helo restrictions since the client can only
 # authenticate after HELO has been sent
