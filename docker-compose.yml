@@ -1,5 +1,6 @@
 core:
   build: ./core
+  restart: always
   ports:
     - "25:25"
     - "143:143"
@@ -12,6 +13,7 @@ core:
    # - amavis
 opendkim:
   build: ./opendkim
+  restart: always
   volumes:
     - /opt/dockermail/settings:/mail_settings
 # amavis:
