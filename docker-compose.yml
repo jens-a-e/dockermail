@@ -16,7 +16,8 @@ opendkim:
   restart: always
   volumes:
     - /opt/dockermail/settings:/mail_settings
-# amavis:
-#   build: ./amavis
-#   volumes:
-#     - /opt/dockermail/settings:/mail_settings
+#amavis:
+#  build: ./amavis
+#  restart: always
+#  volumes:
+#    - /opt/dockermail/settings:/mail_settings
