@@ -1,3 +1,3 @@
-sudo cp /etc/letsencrypt/live/mail.poetic.systems/fullchain.pem /opt/dockermail/settings/ssl-cert-snakeoil.pem
-sudo cp /etc/letsencrypt/live/mail.poetic.systems/privkey.pem /opt/dockermail/settings/ssl-cert-snakeoil.key
+sudo cp ./data/etc/letsencrypt/live/mail.poetic.systems/fullchain.pem ./data/settings/ssl-cert-snakeoil.pem
+sudo cp ./data/etc/letsencrypt/live/mail.poetic.systems/privkey.pem ./data/settings/ssl-cert-snakeoil.key
 

@@ -6,8 +6,8 @@ core:
     - "143:143"
     - "587:587"
   volumes:
-    - /opt/dockermail/settings:/mail_settings
-    - /opt/dockermail/vmail:/vmail
+    - ./data/settings:/mail_settings
+    - ./data/vmail:/vmail
   links:
    - opendkim
    # - amavis
@@ -15,9 +15,9 @@ opendkim:
   build: ./opendkim
   restart: always
   volumes:
-    - /opt/dockermail/settings:/mail_settings
+    - ./data/settings:/mail_settings
 #amavis:
 #  build: ./amavis
 #  restart: always
 #  volumes:
-#    - /opt/dockermail/settings:/mail_settings
+#    - ./data/settings:/mail_settings
